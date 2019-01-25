@@ -18,6 +18,7 @@ PNGImage.readImage('maze.png', (err, image) => {
         value = 0
       } else if (pixel === -16776961) {
         value = 2
+        starts.push([column, line])
       }
 
       lineArray.push(value)

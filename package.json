@@ -4,6 +4,7 @@
   "description": "a simple algorithm that find the shortest path in a maze",
   "main": "app.js",
   "dependencies": {
+    "heap": "^0.2.6",
     "pngjs-image": "^0.11.7"
   },
   "devDependencies": {},
