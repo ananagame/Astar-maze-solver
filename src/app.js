@@ -1,7 +1,7 @@
 const PNGImage = require('pngjs-image')
 const AStar = require('./astar')
 
-PNGImage.readImage('maze.png', (err, mazeImage) => {
+PNGImage.readImage('res/maze.png', (err, mazeImage) => {
   if (err) {
     throw err
   }
@@ -34,7 +34,11 @@ PNGImage.readImage('maze.png', (err, mazeImage) => {
   AStar.drawMaze(maze, image)
   AStar.drawPath(path, image)
 
-  image.writeImage('solved.png', function (err) {
+  starts.forEach(coordinate => {
+    image.setAt(coordinate.x, coordinate.y, { red: 244, green: 110, blue: 66, alpha: -1 })
+  })
+
+  image.writeImage('res/solved.png', function (err) {
     if (err) {
       throw err
     }
